@@ -30,7 +30,7 @@ exports.handle = function handle(client) {
     },
 
     prompt(callback) {
-      const environment = client.getCurrentApplicationEnvironment()
+      const environment = client.getEnvironment()
       getCurrentWeather(environment.weatherAPIKey, client.getConversationState().weatherCity.value, resultBody => {
         if (!resultBody || resultBody.cod !== 200) {
           console.log('Error getting weather.')
